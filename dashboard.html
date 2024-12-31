@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Set character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Link to external CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  <!-- Include Chart.js library from CDN -->
+</head>
+<body>
+    <div class="container dashboard"> <!-- Main container for the dashboard -->
+        <div class="logout"><a href="{{ url_for('logout') }}">Logout</a></div> <!-- Logout link -->
+        <h2>Your Expenses</h2> <!-- Title for the expenses section -->
+        
+        <!-- Loop through expenses and display each one -->
+        {% for expense in expenses %}
+            <div class="expense-item"> <!-- Individual expense item -->
+                <p><strong>Amount:</strong> Rs.{{ expense.amount }}</p> <!-- Display amount -->
+                <p><strong>Description:</strong> {{ expense.description }}</p> <!-- Display description -->
+                <p><strong>Date:</strong> {{ expense.date }}</p> <!-- Display date -->
+                <a href="{{ url_for('delete_expense', id=expense.id) }}">Delete</a> <!-- Link to delete expense -->
+                <a href="{{ url_for('update_expense', id=expense.id) }}">Update</a> <!-- Link to update expense -->
+            </div>
+        {% endfor %}
+        
+        <button onclick="window.location.href='{{ url_for('add_expense') }}'">Add Expense</button> <!-- Button to add new expense -->
+
+        <!-- Chart Canvas -->
+        <canvas id="expensesChart"></canvas> <!-- Canvas for rendering the chart -->
+    </div>
+
+    <!-- Include Chart.js again (optional, but good practice to ensure it's available) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Get the canvas context for drawing the chart
+        var ctx = document.getElementById('expensesChart').getContext('2d');
+        
+        // Create a new chart
+        var expensesChart = new Chart(ctx, {
+            type: 'bar',  // Type of chart (bar chart)
+            data: {
+                labels: {{ labels|tojson }},  // Convert labels from Flask to JSON format
+                datasets: [{
+                    label: 'Expenses',  // Label for the dataset
+                    data: {{ data|tojson }},  // Convert expense amounts from Flask to JSON format
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Background color of bars
+                    borderColor: 'rgba(75, 192, 192, 1)', // Border color of bars
+                    borderWidth: 1 // Width of the bar borders
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true // Start the Y-axis at 0
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

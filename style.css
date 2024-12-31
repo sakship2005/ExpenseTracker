@@ -1,0 +1,188 @@
+/* Universal Styles */
+* {
+    margin: 0; /* Remove default margin for all elements */
+    padding: 0; /* Remove default padding for all elements */
+    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif; /* Set a default font for the body */
+    background-color: #f4f4f9; /* Light background color for the page */
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    min-height: 100vh; /* Minimum height to cover the viewport */
+}
+
+/* Container for the main content */
+.container {
+    width: 90%; /* Full width of the container with a maximum width */
+    max-width: 400px; /* Limit the width of the container */
+    padding: 20px; /* Padding inside the container for spacing */
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center text inside the container */
+    margin: 10px; /* Margin around the container */
+}
+
+/* Dashboard specific styles */
+.dashboard {
+    max-width: 600px; /* Maximum width for the dashboard */
+}
+
+/* Heading Styles */
+h2 {
+    font-size: 24px; /* Font size for headings */
+    color: #333; /* Dark gray color for headings */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Form Styles */
+form {
+    display: flex; /* Use flexbox for the form layout */
+    flex-direction: column; /* Stack form elements vertically */
+}
+
+/* Label Styles */
+label {
+    font-size: 14px; /* Font size for labels */
+    color: #555; /* Medium gray color for labels */
+    margin: 10px 0 5px; /* Margin around the labels */
+    text-align: left; /* Align labels to the left */
+}
+
+/* Input Styles */
+input[type="number"],
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px; /* Padding inside input fields */
+    font-size: 16px; /* Font size for input text */
+    border: 1px solid #ccc; /* Light border for input fields */
+    border-radius: 4px; /* Rounded corners for input fields */
+    margin-bottom: 15px; /* Space below input fields */
+    width: 100%; /* Full width of the input fields */
+}
+
+/* Button Styles */
+button {
+    padding: 10px; /* Padding inside the button */
+    font-size: 16px; /* Font size for button text */
+    color: #fff; /* White text color */
+    background-color: #007bff; /* Blue background color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color change on hover */
+    margin-top: 10px; /* Space above the button */
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Expense Item Styles */
+.expense-item {
+    background-color: #f9f9f9; /* Light background color for expense items */
+    border: 1px solid #e0e0e0; /* Light gray border for expense items */
+    padding: 10px; /* Padding inside expense items */
+    margin: 10px 0; /* Margin around expense items */
+    border-radius: 4px; /* Rounded corners for expense items */
+    text-align: left; /* Align text to the left inside expense items */
+}
+
+/* Paragraph Styles inside Expense Items */
+.expense-item p {
+    font-size: 14px; /* Font size for paragraphs */
+    color: #333; /* Dark gray color for text */
+    margin: 5px 0; /* Space around paragraphs */
+}
+
+/* Link Styles inside Expense Items */
+.expense-item a {
+    font-size: 12px; /* Font size for links */
+    color: #007bff; /* Blue color for links */
+    margin-right: 10px; /* Space to the right of the link */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+/* Link Hover Effect */
+.expense-item a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Canvas Styles */
+canvas {
+    margin-top: 20px; /* Space above the canvas */
+    max-width: 100%; /* Responsive width */
+}
+
+/* Logout and Text Link Styles */
+.logout, .text-white, .cancel-link {
+    display: inline-block; /* Display as inline block */
+    margin: 15px 0; /* Margin around links */
+    color: #007bff; /* Blue color for links */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+/* Logout and Link Hover Effect */
+.logout:hover, .text-white:hover, .cancel-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Additional Text Link Styles */
+.text-white {
+    color: #007bff; /* Blue color for text links */
+    font-size: 14px; /* Font size for text links */
+}
+
+a.cancel-link {
+    font-size: 14px; /* Font size for cancel link */
+}
+
+/* Ensuring Consistent Box Sizing */
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Full Height and Width for HTML and Body */
+html, body {
+    height: 100%; /* Set height of HTML and body to 100% */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    overflow: hidden; /* Prevent scrolling on the body */
+}
+
+/* Full Height Container */
+.container {
+    height: 100vh; /* Make the container full height of the viewport */
+    width: 100vw; /* Make the container full width of the viewport */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    padding: 20px; /* Add padding for aesthetics */
+}
+
+/* Logout Bar Styles */
+.logout {
+    height: 40px; /* Fixed height for the logout bar */
+    background-color: #f0f0f0; /* Light background for logout area */
+    padding: 10px; /* Padding for the logout bar */
+    text-align: right; /* Align text to the right */
+}
+
+/* Content Area Styles */
+.content {
+    flex-grow: 1; /* Allow content area to grow and fill available space */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+}
+
+/* Additional Expense Item Margin */
+.expense-item {
+    margin-bottom: 15px; /* Add spacing between expense items */
+}

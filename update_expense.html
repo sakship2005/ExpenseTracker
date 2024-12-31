@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Set character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+    <title>Update Expense</title> <!-- Title of the page -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Link to external CSS -->
+</head>
+<body>
+    <div class="container"> <!-- Main container for the update form -->
+        <h2>Update Expense</h2> <!-- Title for the update form -->
+        
+        <!-- Form for updating the expense -->
+        <form method="POST"> <!-- Form submission using POST method -->
+            <label for="amount">Amount:</label> <!-- Label for amount input -->
+            <input type="number" step="0.01" name="amount" value="{{ expense.amount }}" required> <!-- Input for amount, pre-filled with current value -->
+
+            <label for="description">Description:</label> <!-- Label for description input -->
+            <input type="text" name="description" value="{{ expense.description }}" required> <!-- Input for description, pre-filled with current value -->
+
+            <label for="date">Date:</label> <!-- Label for date input -->
+            <input type="date" name="date" value="{{ expense.date }}" required> <!-- Input for date, pre-filled with current value -->
+
+            <button type="submit">Update Expense</button> <!-- Submit button to update the expense -->
+        </form>
+        
+        <a href="{{ url_for('dashboard') }}">Cancel</a> <!-- Link to cancel and return to dashboard -->
+    </div>
+</body>
+</html>

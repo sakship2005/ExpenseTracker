@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Set character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+    <title>Login</title> <!-- Title of the page -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Link to external CSS -->
+</head>
+<body>
+    <div class="container"> <!-- Main container for the form -->
+        <h2>Login</h2> <!-- Title for the login form -->
+        
+        <!-- Form for user login -->
+        <form action="{{ url_for('login') }}" method="POST"> <!-- Form submission to the login route -->
+            <label for="email">Email:</label> <!-- Label for email input -->
+            <input type="email" name="email" required> <!-- Input for user email, required for submission -->
+            
+            <label for="password">Password:</label> <!-- Label for password input -->
+            <input type="password" name="password" required> <!-- Input for user password, required for submission -->
+            
+            <button type="submit">Login</button> <!-- Submit button for the form -->
+        </form><br>
+        
+        <!-- Link to the registration page -->
+        Not a User? <a href="/register" class="text-white">Register</a> 
+    </div>
+</body>
+</html>

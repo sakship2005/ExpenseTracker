@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Set character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+    <title>Add Expense</title> <!-- Title of the page -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Link to external CSS -->
+</head>
+<body>
+    <div class="container"> <!-- Main container for the form -->
+        <h2>Add Expense</h2> <!-- Title for the form -->
+        
+        <!-- Form for adding an expense -->
+        <form action="/add_expense" method="POST"> <!-- Form submission to the add_expense route -->
+            <label for="amount">Amount:</label> <!-- Label for amount input -->
+            <input type="number" name="amount" step="0.01" required> <!-- Input for amount, accepts decimal values -->
+            
+            <label for="description">Description:</label> <!-- Label for description input -->
+            <input type="text" name="description" required> <!-- Input for expense description -->
+            
+            <label for="date">Date:</label> <!-- Label for date input -->
+            <input type="date" name="date" required> <!-- Input for date, formatted as YYYY-MM-DD -->
+            
+            <button type="submit">Add Expense</button> <!-- Submit button for the form -->
+        </form>
+    </div>
+</body>
+</html>
